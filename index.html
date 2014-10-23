@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Data Responsive SVG Map</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body ng-app="SvgMapApp" ng-controller="MainCtrl">
+<div class="container">
+    <h2>Angular JS Data Responsive SVG Map</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel panel-body">
+                    <div svg-map></div>
+                    <div class="scale">
+                        <div ng-repeat="n in [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]"
+                             ng-style="{backgroundColor:'{{n | map_colour}}'}">{{n}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <p>
+                <button ng-click="createDummyData()" class="btn btn-block btn-default">Create Dummy Data</button>
+            </p>
+            <div class="panel panel-default">
+                <div class="panel panel-body">
+                    <div class="regionlist">
+                        <div ng-repeat="(key,region) in dummyData"
+                             ng-class="{active:hoverRegion==key}"
+                             ng-mouseover="changeHoverRegion(key)">
+                            <div>{{key}}</div>
+                            <div>{{region.value | number}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/angular.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/directives.js"></script>
+<script src="js/filters.js"></script>
+</body>
+</html>

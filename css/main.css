@@ -1,0 +1,46 @@
+svg .state {
+    stroke-width: 2;
+    stroke: #fff;
+
+    -webkit-transition: stroke 0.5s, stroke-width 0.5s;
+    -o-transition: stroke 0.5s, stroke-width 0.5s;
+    transition: stroke 0.5s, stroke-width 0.5s;
+}
+svg .state:hover , .state.active {
+    cursor: pointer;
+    stroke-width: 4;
+    stroke: #000;
+}
+
+.regionlist {
+    -webkit-column-count: 5; /* Chrome, Safari, Opera */
+    -moz-column-count: 5; /* Firefox */
+    column-count: 5;
+}
+.regionlist > div {
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid grey;
+}
+
+.regionlist > div.active {
+    font-weight: bold;
+    background-color: lightblue;
+}
+
+.regionlist > div > div {
+    display: inline-block;
+    width: 48%;
+}
+
+.scale {
+    position: relative;
+}
+.scale div {
+    width: 9.07%;
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 0;
+}
